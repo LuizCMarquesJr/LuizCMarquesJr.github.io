@@ -18,7 +18,6 @@ I am a PhD in Electrical Engineering (UNESP) with over 6 years of experience in 
 
 - 📫 **Contact:**
     - **LinkedIn:** [Luiz Carlos Marques Junior](https://www.linkedin.com/in/luiz-carlos-marques-junior-5455b128b/)
-    - **Email:** luizcarlosyas@gmail.com
 
 <br>
 <p align="center">
