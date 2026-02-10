@@ -1,0 +1,265 @@
+:root {
+    --primary-color: #003366; /* Dark Blue from CV */
+    --text-color: #333;
+    --bg-color: #fff;
+    --sidebar-bg: #f8f9fa;
+    --sidebar-width: 280px;
+    --link-color: #003366;
+    --link-hover-color: #0056b3;
+    --date-color: #666;
+    --border-color: #e9ecef;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: #ddd; /* Placeholder */
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.profile-bio {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    color: var(--primary-color);
+    background-color: rgba(0, 51, 102, 0.05);
+    border-radius: 4px;
+}
+
+.social-links {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+    padding-top: 1rem;
+}
+
+.social-links a {
+    color: #555;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    padding: 4rem 6rem;
+    max-width: 1000px;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Experience & Education Items */
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--border-color);
+}
+
+.timeline-item:last-child {
+    border-left: 2px solid transparent;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.item-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.item-date {
+    font-size: 0.9rem;
+    color: var(--date-color);
+    font-style: italic;
+}
+
+.item-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.item-location {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+ul.achievements {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+ul.achievements li {
+    margin-bottom: 0.3rem;
+    color: #444;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.2rem;
+}
+
+/* Publications */
+.publication-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #eee;
+}
+
+.publication-title {
+    font-weight: 600;
+    display: block;
+}
+
+.publication-authors {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.publication-venue {
+    font-style: italic;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 2rem 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+    }
+    
+    .item-header {
+        flex-direction: column;
+    }
+}
